@@ -33,7 +33,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // ===== Rate limiter for posting (simple) =====
 const postLimiter = rateLimit({
   windowMs: 2 * 60 * 1000, // 2 minutes
-  max: 1, // allow 1 post per window per IP
+  max: 100, // allow 1 post per window per IP
   message: { error: 'Too many posts from this IP. Try again later.' }
 });
 
