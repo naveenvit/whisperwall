@@ -109,7 +109,7 @@ async function postWhisper() {
   postBtn.disabled = true;
   setStatus('Posting…');
   try {
-    const res = await fetch('/api/whispers', {
+    const res = await fetch('/whispers', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message, lat: currentLat, lng: currentLng })
